@@ -1,0 +1,20 @@
+public static void printTablaSaldos2()
+{
+	double [][] saldo = new double [5][6];
+	double interes;
+	
+	for(int i = 0; i < saldo.length; i++)
+	{
+		for(int j = 0; j < saldo[i].length; j++)
+		{
+			if(i == 0) saldo[i][j] = 10000;
+			else
+			{
+				interes = 0.10 + j*0.01;
+				saldo[i][j] = saldo[i - 1][j] + (saldo[i - 1][j]*interes);
+			}
+			System.out.printf("%1.2f ", saldo[i][j]);
+		}
+		System.out.println();
+	}
+}
